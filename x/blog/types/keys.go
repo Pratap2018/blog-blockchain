@@ -1,5 +1,7 @@
 package types
 
+import sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
+
 const (
 	// ModuleName defines the module name
 	ModuleName = "blog"
@@ -27,4 +29,14 @@ const (
 	// Keep track of the index of posts
 	PostKey      = "Post-value-"
 	PostCountKey = "Post-count-"
+)
+
+const (
+	CommentKey      = "Comment-value-"
+	CommentCountKey = "Comment-count-"
+)
+
+var (
+	ErrCommentOld = sdkerrors.Register(ModuleName, 1300, "")
+	ErrID         = sdkerrors.Register(ModuleName, 1400, "")
 )
